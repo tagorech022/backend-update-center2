@@ -1,15 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  
+
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.jenkins-ci</groupId>
   <artifactId>update-center2</artifactId>
   <version>1.21-SNAPSHOT</version>
   <packaging>jar</packaging>
-  
+
   <name>update-center2</name>
 
   <properties>
@@ -18,42 +18,49 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <dependencies>
+  <repositories>
+    <repository>
+      <id>jenkins-public</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+    <repository>
+      <id>jenkins-releases</id>
+      <url>https://repo.jenkins-ci.org/releases/</url>
+    </repository>
+  </repositories>
 
-    <!-- Jenkins Core (for VersionNumber and other Jenkins-specific classes) -->
+  <dependencies>
+    <!-- Jenkins Core -->
     <dependency>
       <groupId>org.jenkins-ci.main</groupId>
       <artifactId>jenkins-core</artifactId>
       <version>2.401.1</version>
     </dependency>
 
-    <!-- Args4j (for CmdLineException) -->
+    <!-- Args4j -->
     <dependency>
       <groupId>args4j</groupId>
       <artifactId>args4j</artifactId>
       <version>2.33</version>
     </dependency>
 
-    <!-- JSON (for JSONObject) -->
+    <!-- JSON -->
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20220320</version>
     </dependency>
 
-    <!-- SLF4J (for logging, optional) -->
+    <!-- SLF4J -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.36</version>
     </dependency>
-
   </dependencies>
 
   <build>
     <plugins>
-
-      <!-- Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -63,7 +70,6 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 
