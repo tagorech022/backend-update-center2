@@ -1,73 +1,71 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jenkins-ci</groupId>
-    <artifactId>update-center2</artifactId>
-    <version>1.21-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  <groupId>org.jenkins-ci</groupId>
+  <artifactId>update-center2</artifactId>
+  <version>1.21-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-    <name>update-center2</name>
-    <description>Jenkins Update Center generator</description>
-    <url>https://github.com/jenkins-infra/update-center2</url>
+  <name>update-center2</name>
+  <description>Jenkins Update Center Generator</description>
+  <url>https://github.com/jenkins-infra/update-center2</url>
 
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
 
-    <dependencies>
+  <dependencies>
 
-        <!-- Jenkins core (use a stable version available in Maven Central) -->
-        <dependency>
-            <groupId>org.jenkins-ci.main</groupId>
-            <artifactId>jenkins-core</artifactId>
-            <version>2.319.1</version>
-        </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.main</groupId>
+      <artifactId>jenkins-core</artifactId>
+      <version>2.319.1</version>
+    </dependency>
 
-        <!-- Guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>25.1-android</version>
-        </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>25.1-android</version>
+    </dependency>
 
-        <!-- JSON handling -->
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20210307</version>
-        </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20210307</version>
+    </dependency>
 
-        <!-- Apache Commons -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
-        </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
 
-        <!-- Args4j for command-line parsing -->
-        <dependency>
-            <groupId>args4j</groupId>
-            <artifactId>args4j</artifactId>
-            <version>2.33</version>
-        </dependency>
+    <dependency>
+      <groupId>args4j</groupId>
+      <artifactId>args4j</artifactId>
+      <version>2.33</version>
+    </dependency>
 
-        <!-- Plexus utils -->
-        <dependency>
-            <groupId>org.codehaus.plexus</groupId>
-            <artifactId>plexus-utils</artifactId>
-            <version>3.4.1</version>
-        </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>3.4.1</version>
+    </dependency>
 
-    </dependencies>
+  </dependencies>
 
-    <repositories>
-        <repository>
-            <id>maven-central</id>
-            <url>https://repo.maven.apache.org/maven2/</url>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>jenkins-repo</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+  </repositories>
 
 </project>
